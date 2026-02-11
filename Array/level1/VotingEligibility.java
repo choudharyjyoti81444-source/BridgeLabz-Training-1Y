@@ -1,0 +1,29 @@
+package com.gla.Array.level1;
+import java.util.Scanner;
+public class VotingEligibility {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    // a. Define an array of 10 integer elements
+    int[] ages = new int[10];
+
+    // Take user input for student's age
+    for (int i = 0; i < ages.length; i++) {
+        System.out.print("Enter age of student " + (i + 1) + ": ");
+        ages[i] = sc.nextInt();
+    }
+
+    System.out.println("\nVoting Eligibility Result:");
+
+    // b. Loop through the array and check conditions
+    for (int i = 0; i < ages.length; i++) {
+        if (ages[i] < 0) {
+            System.out.println("Invalid age");
+        } else if (ages[i] >= 18) {
+            System.out.println("The student with the age " + ages[i] + " can vote.");
+        } else {
+            System.out.println("The student with the age " + ages[i] + " cannot vote.");
+        }
+    }
+}
+}
