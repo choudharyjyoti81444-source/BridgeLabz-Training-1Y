@@ -1,0 +1,17 @@
+package com.gla.Regex;
+
+import java.util.*;
+import java.util.regex.*;
+public class ExtractEmails {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
+        Matcher matcher = pattern.matcher(text);
+
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
+}
